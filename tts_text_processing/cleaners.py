@@ -109,6 +109,9 @@ class Cleaner(object):
             word_fns = [expand_numbers, expand_abbreviations]
         elif cleaner_name == 'transliteration_cleaners':
             sequence_fns = [convert_to_ascii, lowercase, collapse_whitespace]
+        elif cleaner_name == 'meronix_cleaners':
+            sequence_fns = [lowercase, collapse_whitespace]
+            word_fns = []
         else:
             raise Exception("{} cleaner not supported".format(cleaner_name))
 
