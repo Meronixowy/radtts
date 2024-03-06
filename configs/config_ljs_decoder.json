@@ -19,7 +19,7 @@
         "log_attribute_samples": false,
         "log_decoder_samples": true,
         "warmstart_checkpoint_path": "",
-        "use_amp": false,
+        "use_amp": true,
         "grad_clip_val": 1.0,
         "loss_weights": {
             "blank_logprob": -1,
@@ -39,7 +39,7 @@
             "LJS": {
                 "basedir": "filelists/",
                 "audiodir": "wavs",
-                "filelist": "ljs_audiopath_text_speaker_train_filelist.txt",
+                "filelist": "list_train.txt",
                 "lmdbpath": ""
             }
         },
@@ -47,7 +47,7 @@
             "LJS": {
                 "basedir": "filelists/",
                 "audiodir": "wavs",
-                "filelist": "ljs_audiopath_text_speaker_val_filelist.txt",
+                "filelist": "list_val.txt",
                 "lmdbpath": ""
             }
         },
@@ -67,11 +67,11 @@
         "use_log_f0": 0,
         "use_energy_avg": true,
         "use_scaled_energy": true,
-        "symbol_set": "radtts",
-        "cleaner_names": ["radtts_cleaners"],
-        "heteronyms_path": "tts_text_processing/heteronyms",
+        "symbol_set": "meronix",
+        "cleaner_names": ["meronix_cleaners"],
+        "heteronyms_path": "",
         "phoneme_dict_path": "tts_text_processing/cmudict-0.7b",
-        "p_phoneme": 1.0,
+        "p_phoneme": 0.0,
         "handle_phoneme": "word",
         "handle_phoneme_ambiguous": "ignore",
         "include_speakers": null,
@@ -91,7 +91,7 @@
         "dist_url": "tcp://localhost:54321"
     },
     "model_config": {
-        "n_speakers": 1,
+        "n_speakers": 4,
         "n_speaker_dim": 16,
         "n_text": 185,
         "n_text_dim": 512,
@@ -109,7 +109,7 @@
         "scaling_fn": "tanh",
         "matrix_decomposition": "LUS",
         "learn_alignments": true,
-        "use_speaker_emb_for_alignment": false,
+        "use_speaker_emb_for_alignment": true,
         "attn_straight_through_estimator": true,
         "use_context_lstm": true,
         "context_lstm_norm": "spectral",
