@@ -111,7 +111,7 @@ class Cleaner(object):
             sequence_fns = [convert_to_ascii, lowercase, collapse_whitespace]
         elif cleaner_name == 'meronix_cleaners':
             sequence_fns = [lowercase, collapse_whitespace]
-            word_fns = []
+            word_fns = [expand_abbreviations]
         else:
             raise Exception("{} cleaner not supported".format(cleaner_name))
 
