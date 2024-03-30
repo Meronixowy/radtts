@@ -442,7 +442,7 @@ def train(n_gpus, rank, output_directory, epochs, optim_algo, learning_rate,
                         iteration, model, criterion, valset, collate_fn,
                         batch_size, n_gpus, logger=logger,
                         train_config=train_config)
-                    checkpoint_path = "{}/model_meronix".format(
+                    checkpoint_path = "{}/model_decoder".format(
                         output_directory, iteration)
                     save_checkpoint(model, optimizer, learning_rate, iteration,
                                     checkpoint_path)
